@@ -1,0 +1,4 @@
+name: Easylogin
+version: '${project.version}'
+main: me.andretex.Main
+description: minecraft system login
