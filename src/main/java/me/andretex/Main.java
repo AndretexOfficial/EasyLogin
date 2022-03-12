@@ -14,6 +14,7 @@ public final class Main extends Plugin {
     public Configuration config;
 
     public MySQL SQL;
+    public static Main plugin;
 
     public void onEnable() {
         instance = this;
@@ -33,6 +34,7 @@ public final class Main extends Plugin {
         if (SQL.isConnected()) {
             System.out.println("Database connected");
         }
+        plugin = this;
     }
 
     private void getCommands() {
@@ -46,5 +48,9 @@ public final class Main extends Plugin {
 
     public static Main getInstance() {
         return instance;
+    }
+
+    public Configuration getConfig() {
+        return null;
     }
 }

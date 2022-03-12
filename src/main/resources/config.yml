@@ -1,0 +1,23 @@
+# EasyLogin | Made with love by Andretex and ThreeWhi
+
+# If you're having problems contact me here: https://discord.gg/GbBT6hmAgY
+
+############################################################
+# +------------------------------------------------------+ #
+# |                       Database                       | #
+# +------------------------------------------------------+ #
+############################################################
+Database:
+  dbHost: localhost         #MySQL ip Host
+  dbPort: 3306              #MySQL port
+  dbDatabase: easylogin     #Database for saving passwords
+  dbUsername: root          #Database username
+  dbPassword:               #Database password
+
+  ############################################################
+  # +------------------------------------------------------+ #
+  # |                       Language                       | #
+  # +------------------------------------------------------+ #
+  ############################################################
+General:
+  Lang: it-IT.yml
