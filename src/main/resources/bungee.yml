@@ -1,4 +1,7 @@
 name: Easylogin
 version: '${project.version}'
-main: me.andretex.Main
+main: space.andretex.Main
 description: minecraft system login
+commands:
+  easyhelp:
+    usage: /easyhelp

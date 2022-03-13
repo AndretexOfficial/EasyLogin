@@ -1,9 +1,11 @@
-package me.andretex;
+package space.andretex;
 
-import me.andretex.Database.MySQL;
+import space.andretex.Database.MySQLConnect;
 import net.md_5.bungee.api.plugin.Plugin;
-import me.andretex.Utils.*;
 import net.md_5.bungee.config.Configuration;
+import space.andretex.Utils.Config;
+import space.andretex.Utils.Message;
+import space.andretex.Commands.Help;
 
 import java.sql.SQLException;
 
@@ -12,17 +14,22 @@ public final class Main extends Plugin {
 
     private static Main instance;
     public Configuration config;
+    public Configuration lang;
 
-    public MySQL SQL;
+    public MySQLConnect SQL;
     public static Main plugin;
 
     public void onEnable() {
         instance = this;
-        this.config = (new Config()).getConfig();
+
+        Config configmanager = new Config();
+        this.config = configmanager.getConfig();
+
         this.getCommands();
+
         this.getLogger().info(Message.color("\n &6EasyLogin &aENABLE &r\n"));
 
-        this.SQL = new MySQL();
+        this.SQL = new MySQLConnect();
 
         try {
             SQL.connect();
@@ -37,7 +44,14 @@ public final class Main extends Plugin {
         plugin = this;
     }
 
-    private void getCommands() {
+    public void getCommands() {
+        String helpPerm = config.getString("commands.ss.permission");
+
+        if (helpPerm != null) {
+            getProxy().getPluginManager().registerCommand(this, new Help("easyhelp"));
+        } else {
+            getProxy().getPluginManager().registerCommand(this, new Help("easyhelp"));
+        }
     }
 
     public void onDisable() {

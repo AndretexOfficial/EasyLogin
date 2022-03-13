@@ -7,17 +7,29 @@
 # |                       Database                       | #
 # +------------------------------------------------------+ #
 ############################################################
-Database:
-  dbHost: localhost         #MySQL ip Host
-  dbPort: 3306              #MySQL port
-  dbDatabase: easylogin     #Database for saving passwords
-  dbUsername: root          #Database username
-  dbPassword:               #Database password
+database:
+  db-host: localhost         #MySQL ip Host
+  db-port: 3306              #MySQL port
+  db-database: easylogin     #Database for saving passwords
+  db-username: root          #Database username
+  db-password:               #Database password
 
   ############################################################
   # +------------------------------------------------------+ #
   # |                       Language                       | #
   # +------------------------------------------------------+ #
   ############################################################
-General:
-  Lang: it-IT.yml
+messages:
+  command:
+    help: "&8&l[&eEasyLogin&8 \n  "
+  help:
+    noplayer: "You are not a player!"
+
+############################################################
+# +------------------------------------------------------+ #
+# |                        Perms                         | #
+# +------------------------------------------------------+ #
+############################################################
+commands:
+  help:
+    permission:

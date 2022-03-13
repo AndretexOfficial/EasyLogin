@@ -1,6 +1,6 @@
-package me.andretex.Utils;
+package space.andretex.Utils;
 
-import me.andretex.Main;
+import space.andretex.Main;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.connection.ProxiedPlayer;

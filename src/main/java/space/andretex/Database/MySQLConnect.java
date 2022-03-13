@@ -1,24 +1,25 @@
-package me.andretex.Database;
+package space.andretex.Database;
 
-import me.andretex.Main;
 import net.md_5.bungee.config.Configuration;
-import me.andretex.Utils.Message;
+import space.andretex.Main;
+
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQL {
+public class MySQLConnect {
    //private String host = "localhost";
    //private String port = "3306";
    //private String database = "easyloginpl";
    //private String username = "root";
    //private String password = "";
-
-    private String host = Main.plugin.getConfig().getString("Database.dbHost");
-    private String port = Main.plugin.getConfig().getString("Database.dbPort");
-    private String database = Main.plugin.getConfig().getString("Database.dbDatabase");
-    private String username = Main.plugin.getConfig().getString("Database.dbUsername");
-    private String password = Main.plugin.getConfig().getString("Database.dbPassword");
+    private Configuration config = Main.getInstance().config;
+    private String host = config.getString("database.db-host");
+    private String port = config.getString("database.db-port");
+    private String database = config.getString("database.db-database");
+    private String username = config.getString("database.db-username");
+    private String password = config.getString("database.db-password");
 
     private Connection connection;
 
