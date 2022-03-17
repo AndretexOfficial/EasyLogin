@@ -27,7 +27,7 @@ public final class Main extends Plugin {
 
         this.getCommands();
 
-        this.getLogger().info(Message.color("\n &6EasyLogin &aENABLE &r\n"));
+        this.getLogger().info(Message.color("&6EasyLogin &aENABLE &r"));
 
         this.SQL = new MySQLConnect();
 
@@ -45,12 +45,29 @@ public final class Main extends Plugin {
     }
 
     public void getCommands() {
-        String helpPerm = config.getString("commands.ss.permission");
 
+
+        String helpPerm = config.getString("commands.help.permission");
         if (helpPerm != null) {
             getProxy().getPluginManager().registerCommand(this, new Help("easyhelp"));
         } else {
             getProxy().getPluginManager().registerCommand(this, new Help("easyhelp"));
+        }
+
+
+        String loginPerm = config.getString("commands.login.permission");
+        if (loginPerm != null) {
+            getProxy().getPluginManager().registerCommand(this, new Help("login"));
+        } else {
+            getProxy().getPluginManager().registerCommand(this, new Help("login"));
+        }
+
+
+        String registerPerm = config.getString("commands.register.permission");
+        if (registerPerm != null) {
+            getProxy().getPluginManager().registerCommand(this, new Help("register"));
+        } else {
+            getProxy().getPluginManager().registerCommand(this, new Help("register"));
         }
     }
 
@@ -67,4 +84,6 @@ public final class Main extends Plugin {
     public Configuration getConfig() {
         return null;
     }
+
+
 }

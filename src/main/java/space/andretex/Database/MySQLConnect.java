@@ -1,12 +1,17 @@
 package space.andretex.Database;
 
+import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.config.Configuration;
 import space.andretex.Main;
+import java.sql.Statement;
 
-
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.UUID;
+
+import static java.text.Collator.PRIMARY;
 
 public class MySQLConnect {
    //private String host = "localhost";
@@ -29,9 +34,9 @@ public class MySQLConnect {
 
     public void connect() throws ClassNotFoundException, SQLException {
         if (!isConnected()) {
-            connection = DriverManager.getConnection("jdbc:mysql://" +
-                            host + ":" + port + "/" + database + "?useSSL=false",
-                    username, password);
+            connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false", username, password);
+
+
         }
     }
 
@@ -45,7 +50,12 @@ public class MySQLConnect {
         }
     }
 
+
+
     public Connection getConnection() {
         return connection;
     }
+
+
+
 }

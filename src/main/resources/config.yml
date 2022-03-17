@@ -20,10 +20,17 @@ database:
   # +------------------------------------------------------+ #
   ############################################################
 messages:
+  console:
+    you-are-not-a-player: "You are not a Player"
   command:
-    help: "&8&l[&eEasyLogin&8 \n  "
-  help:
-    noplayer: "You are not a player!"
+    help: "\n
+    #You can translate the comments of the command
+    &c/easyhelp       &eShow all commands \n 
+    &c/register       &eregister you account \n 
+    &c/login          &eLogin to your account \n 
+    &c/premium        &emake your account premium \n 
+    &e/unregister     &cUnregister specific account
+    "
 
 ############################################################
 # +------------------------------------------------------+ #
@@ -32,4 +39,10 @@ messages:
 ############################################################
 commands:
   help:
-    permission:
+    permission: #If there is nothing all players can do /easyhelp
+
+  login:
+    permission: #If there is nothing all players can do /login
+
+  register:
+    permission: #If there is nothing all players can do /register

@@ -21,11 +21,12 @@ public class Help extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
         if (!(sender instanceof ProxiedPlayer)) {
-            System.out.println(config.getString("messages.help.noplayer"));
+            System.out.println("&8&l[&eEasyLogin]&8");
+            System.out.println(config.getString("messages.command.help"));
         }else if(sender instanceof ProxiedPlayer) {
             ProxiedPlayer player = (ProxiedPlayer) sender;
             try {
-                Message.send(player, "messages.command.help");
+                Message.send(player, "&8&l[&eEasyLogin]&8" + "\n" + "messages.command.help");
             } catch (Exception e) {
                 e.printStackTrace();
             }
